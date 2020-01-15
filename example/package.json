@@ -1,0 +1,59 @@
+{
+  "name": "simple-updater-example",
+  "productName": "Simple Updater Example",
+  "version": "0.0.1",
+  "description": "Example of using electron-simple-updater",
+  "main": "app/main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "dist": "build",
+    "publish": "publish",
+    "release": "npm run dist && npm run publish"
+  },
+  "author": "Alexey Prokhorov",
+  "license": "MIT",
+  "private": true,
+  "build": {
+    "appId": "megahertz.electron-simple-updater-example",
+    "appImage": {
+      "systemIntegration": "doNotAsk"
+    },
+    "files": [
+      "!publisher.json",
+      "!README.md",
+      "!updates.json"
+    ],
+    "linux": {
+      "category": "Development"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": "squirrel"
+    },
+    "squirrelWindows": {
+      "iconUrl": "https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/build/icon.ico"
+    }
+  },
+  "updater": {
+    "url": "https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/updates.json"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megahertz/electron-simple-updater.git"
+  },
+  "dependencies": {
+    "electron-simple-updater": "^1.2.0"
+  },
+  "devDependencies": {
+    "electron": "*",
+    "electron-builder": "*",
+    "electron-simple-publisher": "*",
+    "electron-builder-squirrel-windows": "*"
+  }
+}

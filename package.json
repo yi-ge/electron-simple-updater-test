@@ -1,0 +1,53 @@
+{
+  "name": "electron-simple-updater",
+  "version": "1.6.0",
+  "description": "Simple way to enable update for the electron application",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "humile",
+    "test:full": "npm run test && npm run lint",
+    "lint": "eslint 'src/**/*.js' && tsc --noEmit",
+    "postversion": "git push && git push --tags",
+    "preversion": "npm run test:full",
+    "prepack": "npm run test:full"
+  },
+  "typings": "index.d.ts",
+  "repository": "megahertz/electron-simple-updater",
+  "files": [
+    "src/*",
+    "!__specs__"
+  ],
+  "keywords": [
+    "electron",
+    "atom",
+    "updater",
+    "update",
+    "publish",
+    "release",
+    "windows",
+    "mac",
+    "osx",
+    "linux",
+    "desktop"
+  ],
+  "author": "Alexey Prokhorov",
+  "license": "MIT",
+  "bugs": "https://github.com/megahertz/electron-simple-updater/issues",
+  "homepage": "https://github.com/megahertz/electron-simple-updater#readme",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "devDependencies": {
+    "electron": "*",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "humile": "^0.2.16",
+    "mock-require": "^3.0.3",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "httpreq": "0.4.24",
+    "semver": "^7.1.1"
+  }
+}

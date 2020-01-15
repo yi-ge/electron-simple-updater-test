@@ -1,0 +1,7 @@
+{
+  "name": "esu-test",
+  "version": "0.0.1",
+  "updater": {
+    "url": "https://example.com/updates.json"
+  }
+}
